@@ -58,13 +58,11 @@ void main(List<String> args) async {
 
   switch (result) {
     case 'goodResult':
-      saveInRepository(result);
-      break;
+      await saveInRepository(result);
     case 'badResult':
-      reportError(result);
-      break;
+      await reportError(result);
     default:
-      tryAgain();
+      await tryAgain();
   }
 
 
